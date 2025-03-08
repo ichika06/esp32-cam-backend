@@ -3,7 +3,7 @@ const httpProxy = require("http-proxy");
 
 const app = express();
 const proxy = httpProxy.createProxyServer({});
-const ESP_STREAM_URL = "http://192.168.1.100:81/stream";
+const ESP_STREAM_URL = "http://192.168.1.10/stream";
 
 app.get("/stream", (req, res) => {
   proxy.web(req, res, { target: ESP_STREAM_URL, changeOrigin: true });
